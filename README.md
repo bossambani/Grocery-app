@@ -17,9 +17,10 @@ An online grocery shopping platform built with Django. Users can browse, search,
 
 ## 📷 Screenshots
 
-> *(Add screenshots here when available)*
+<h2>📸 Screenshot</h2>
+<img src="assests/homepage.png" alt="Home Page" width="600"/>
 
----
+
 
 ## 🔧 Tech Stack
 
