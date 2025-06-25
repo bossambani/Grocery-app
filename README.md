@@ -28,7 +28,7 @@ Welcome to **Grocery App**, your one-stop shop for fresh, affordable, and qualit
 
 ## 🛠️ Tech Stack
 
-- **Backend:** Django (Class-Based Views)
+- **Backend:** Python (Django)
 - **Frontend:** Bootstrap 5, HTML, CSS
 - **Database:** SQLite (default for development)
 - **Auth:** Django built-in authentication
