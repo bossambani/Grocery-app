@@ -1,39 +1,50 @@
 # 🥦 Grocery App
 
-An online grocery shopping platform built with Django. Users can browse, search, and order fresh groceries directly from the web. Features include user authentication, shopping cart functionality, and admin product management.
+Welcome to **Grocery App**, your one-stop shop for fresh, affordable, and quality groceries delivered straight to your doorstep.
+
+![Home Page](./assets/homepage.png)
 
 ---
 
 ## 🚀 Features
 
-- ✅ User Sign Up & Login (with password change/logout)
-- ✅ Browse groceries (with random card display)
-- ✅ Search functionality
-- ✅ Add to cart and view cart
-- ✅ Admin dashboard for managing products
-- ✅ Responsive UI using Bootstrap 5
+- 🥕 Browse a variety of grocery items
+- 🛒 Add products to cart
+- 🔍 Search for items by name
+- 👤 User authentication (sign up, login, logout)
+- 📦 View and manage your cart
+- ✅ Secure checkout process (coming soon!)
 
 ---
 
-## 📸 Screenshot
+## 📸 Screenshots
 
-![Home Page](assets/homepage.png)
-
----
-
-## 🔧 Tech Stack
-
-- **Backend**: Django (Python)
-- **Frontend**: HTML, Bootstrap 5, jQuery (optional)
-- **Database**: SQLite (default)
-- **Authentication**: Django built-in auth
+- **Home Page:** Displays a list of grocery products
+- **Search Function:** Easily find your desired items
+- **Cart Page:** View items added to your cart
+- **Responsive Design:** Mobile and desktop-friendly
 
 ---
 
-## 🛠️ Getting Started
+## 🛠️ Tech Stack
 
-### 1. Clone the repository
+- **Backend:** Django (Class-Based Views)
+- **Frontend:** Bootstrap 5, HTML, CSS
+- **Database:** SQLite (default for development)
+- **Auth:** Django built-in authentication
+
+---
+
+## 📂 Project Structure
 
 ```bash
-git clone https://github.com/your-username/Grocery-app.git
-cd Grocery-app
+Grocery-app/
+├── products/              # Django app for product logic
+│   ├── models.py          # Product, Order, OrderItem, Customer models
+│   ├── views.py           # Class-based views for listing, searching, cart
+│   └── templates/
+├── static/                # CSS, JS, images
+├── templates/             # Base and page templates
+├── assets/                # Screenshots and README assets
+├── manage.py
+└── README.md
