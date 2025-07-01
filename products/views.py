@@ -7,13 +7,6 @@ import random
 from django.http import Http404
 
 
-# def index(request):
-#     products = Product.objects.all()
-#     return render(request, 'index.html', {'products': products})
-
-# def new(request):
-#     return HttpResponse('New products')
-
 class HomePageView(ListView):
     model = Product
     template_name = 'home.html'
