@@ -9,7 +9,7 @@ class Customer(models.Model):
     address = models.TextField(blank=True)
 
     def __str__(self):
-        return self.user.username
+        return f"{self.user.username}"
 
 
 class Product(models.Model):
@@ -19,7 +19,7 @@ class Product(models.Model):
     stock = models.PositiveIntegerField(default=0)
 
     def __str__(self):
-        return self.name
+        return f"{self.name}"
 
 
 class Order(models.Model):

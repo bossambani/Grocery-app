@@ -31,8 +31,11 @@ class ProductSearchView(ListView):
         return Product.objects.none()
     
 
+#Services Functionality
+class ServicesTemplateView(TemplateView):
+    template_name = 'services.html'
 
-#new functionality
+#Cart functionality
 class AddToCartView(LoginRequiredMixin, View):
     def post(self, request, product_id):
         product = get_object_or_404(Product, id=product_id)

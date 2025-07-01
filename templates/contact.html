@@ -1,0 +1,12 @@
+{% load crispy_forms_tags %}
+{% extends 'base.html'}
+{% block title %}Contact Page{% endblock %}
+{% block content %}
+
+    <h1>Contact At</h1>
+   <form method="post">
+    {% crispy_token %}
+    {{ form|crispy}}
+    <input class="btn btn-success" type="submit" value="Send">
+   </form>
+{% endblock %}
