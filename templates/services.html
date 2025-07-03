@@ -3,9 +3,77 @@
 {% block title %}Services{% endblock %}
 
 {% block content %}
-    <div class="form-card">
-    <p>Online accessing of the product</p>
-    <p>Online Purchase of the product</p>
-    <p>Delivery to the specified locations</p>
+
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f8f9fa;
+    }
+    .service-icon {
+      font-size: 48px;
+      color: #28a745;
+    }
+    .card {
+      transition: transform 0.2s ease-in-out;
+    }
+    .card:hover {
+      transform: scale(1.03);
+    }
+  </style>
+
+
+  <div class="container py-5">
+    <h1 class="text-center mb-4">Our Services</h1>
+    <p class="text-center mb-5">We deliver more than just groceries – we deliver convenience, freshness, and peace of mind.</p>
+
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card shadow-sm h-100 text-center p-4">
+          <div class="service-icon mb-3">🛒</div>
+          <h5 class="card-title">Online Grocery Shopping</h5>
+          <p class="card-text">Browse and order your favorite products from the comfort of your home. No queues, no hassle.</p>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card shadow-sm h-100 text-center p-4">
+          <div class="service-icon mb-3">🚚</div>
+          <h5 class="card-title">Fast Delivery</h5>
+          <p class="card-text">Get your groceries delivered to your doorstep in as little as 1 hour – fresh and on time.</p>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card shadow-sm h-100 text-center p-4">
+          <div class="service-icon mb-3">📦</div>
+          <h5 class="card-title">Subscription Packs</h5>
+          <p class="card-text">Never run out of essentials again. Choose from weekly or monthly delivery packs tailored to your needs.</p>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card shadow-sm h-100 text-center p-4">
+          <div class="service-icon mb-3">💳</div>
+          <h5 class="card-title">Secure Payment Options</h5>
+          <p class="card-text">Pay securely via M-Pesa, credit card, or cash on delivery. Your data is protected at all times.</p>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card shadow-sm h-100 text-center p-4">
+          <div class="service-icon mb-3">📱</div>
+          <h5 class="card-title">Mobile App Integration</h5>
+          <p class="card-text">Shop on the go with our mobile app, track orders in real time, and get instant updates.</p>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card shadow-sm h-100 text-center p-4">
+          <div class="service-icon mb-3">🌱</div>
+          <h5 class="card-title">Fresh & Organic Produce</h5>
+          <p class="card-text">We partner with local farmers and suppliers to ensure your food is always fresh and chemical-free.</p>
+        </div>
+      </div>
     </div>
-{% endblock %}
+  </div>
+  {% endblock %}

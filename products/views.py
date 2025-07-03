@@ -5,6 +5,8 @@ from django.views.generic import ListView, TemplateView
 from django.contrib.auth.mixins import LoginRequiredMixin
 import random
 from django.http import Http404
+from django.http import JsonResponse
+
 
 
 class HomePageView(ListView):
@@ -29,11 +31,6 @@ class ProductSearchView(ListView):
         if query:
             return Product.objects.filter(name__icontains=query)
         return Product.objects.none()
-    
-
-#Services Functionality
-class ServicesTemplateView(TemplateView):
-    template_name = 'services.html'
 
 #Cart functionality
 class AddToCartView(LoginRequiredMixin, View):
@@ -70,3 +67,4 @@ class CartView(LoginRequiredMixin, TemplateView):
         context['order'] = order
         context['items'] = order.items.all() if order else []
         return context
+

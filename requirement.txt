@@ -1,6 +1,14 @@
 asgiref==3.8.1
+certifi==2025.6.15
+charset-normalizer==3.4.2
 crispy-bootstrap5==2025.6
-Django==5.1.6
+Django==5.2.3
 django-crispy-forms==2.4
+django-mpesa==2.0.14
+djangorestframework==3.16.0
+idna==3.10
+mpesa-api==0.2.3
+requests==2.32.4
 sqlparse==0.5.3
-tzdata==2025.1
+tzdata==2025.2
+urllib3==2.5.0

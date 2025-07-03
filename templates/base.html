@@ -1,98 +1,159 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- Bootstrap 5 CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <!-- Bootstrap 5 CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    />
 
-
-  <title>{% block title %}Grocery App{% endblock title %}</title>
-</head>
-<body>
-<nav class="navbar navbar-expand-lg navbar-dark bg-success shadow-sm sticky-top">
-  <div class="container-fluid">
-    <!-- Brand -->
-    <a class="navbar-brand fw-bold text-light" href="{% url 'home' %}" style="font-size: 1.5rem;">
-      🥦 Grocery
-    </a>
+    <title>{% block title %}Grocery App{% endblock title %}</title>
+  </head>
+  <body>
+    <nav
+      class="navbar navbar-expand-lg navbar-dark bg-success shadow-sm sticky-top"
+    >
+      <div class="container-fluid">
+        <!-- Brand -->
+        <a
+          class="navbar-brand fw-bold text-light"
+          href="{% url 'home' %}"
+          style="font-size: 1.5rem"
+        >
+          🥦 Grocery
+        </a>
 
         <!-- Hamburger button -->
-    <button class="navbar-toggler ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+        <button
+          class="navbar-toggler ms-2"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#mainNav"
+          aria-controls="mainNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-    <!-- Collapsible Menu with Home and About -->
-    <div class="collapse navbar-collapse" id="mainNav">
-      <ul class="navbar-nav me-auto mt-2 mt-lg-0">
-        <li class="nav-item">
-          <a class="nav-link {% if request.path == '/' %}active{% endif %}" href="{% url 'home' %}">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link {% if request.path == '/about/' %}active{% endif %}" href="{% url 'about' %}">About</a>
-        </li>
-         <li class="nav-item">
-          <a class="nav-link {% if request.path == '/services/' %}active{% endif %}" href="{% url 'services' %}">Services</a>
-        </li>
-         <li class="nav-item">
-          <a class="nav-link {% if request.path == '/contact/' %}active{% endif %}" href="{% url 'contact' %}">Contact</a>
-        </li>
-      </ul>
-    </div>
+        <!-- Collapsible Menu with Home and About -->
+        <div class="collapse navbar-collapse" id="mainNav">
+          <ul class="navbar-nav me-auto mt-2 mt-lg-0">
+            <li class="nav-item">
+              <a
+                class="nav-link {% if request.path == '/' %}active{% endif %}"
+                href="{% url 'home' %}"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link {% if request.path == '/about/' %}active{% endif %}"
+                href="{% url 'about' %}"
+                >About</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link {% if request.path == '/services/' %}active{% endif %}"
+                href="{% url 'services' %}"
+                >Services</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link {% if request.path == '/contact/' %}active{% endif %}"
+                href="{% url 'contact' %}"
+                >Contact</a
+              >
+            </li>
+          </ul>
+        </div>
 
-    <!-- Always-visible Search Bar -->
-    <form class="d-flex ms-auto me-2" method="get" action="{% url 'product-search' %}">
-      <input class="form-control me-2" type="search" name="q" placeholder="Search..." aria-label="Search" value="{{ request.GET.q }}">
-      <button class="btn btn-outline-light" type="submit">Search</button>
-    </form>
+        <!-- Always-visible Search Bar -->
+        <form
+          class="d-flex ms-auto me-2"
+          method="get"
+          action="{% url 'product-search' %}"
+        >
+          <input
+            class="form-control me-2"
+            type="search"
+            name="q"
+            placeholder="Search..."
+            aria-label="Search"
+            value="{{ request.GET.q }}"
+          />
+          <button class="btn btn-outline-light" type="submit">Search</button>
+        </form>
 
-    <!-- Always-visible Cart Icon -->
-    <a href="{% url 'view-cart' %}" class="btn btn-outline-light me-2 position-relative">
-      🛒
-      {% if cart_item_count %}
-      <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-        {{ cart_item_count }}
-      </span>
-      {% endif %}
-    </a>
+        <!-- Always-visible Cart Icon -->
+        <a
+          href="{% url 'view-cart' %}"
+          class="btn btn-outline-light me-2 position-relative"
+        >
+          🛒 {% if cart_item_count %}
+          <span
+            class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+          >
+            {{ cart_item_count }}
+          </span>
+          {% endif %}
+        </a>
 
-    <!-- Always-visible User Dropdown -->
-    {% if user.is_authenticated %}
-    <div class="dropdown">
-      <a class="btn btn-outline-light dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-        <i class="bi bi-person-circle me-1"></i> {{ user.username }}
-      </a>
-      <ul class="dropdown-menu dropdown-menu-end">
-        <li><a class="dropdown-item" href="{% url 'password_change' %}">🔐 Change Password</a></li>
-        <li><hr class="dropdown-divider"></li>
-        <li>
-          <form method="post" action="{% url 'logout' %}">
-            {% csrf_token %}
-            <button type="submit" class="dropdown-item text-danger">🚪 Log Out</button>
-          </form>
-        </li>
-      </ul>
-    </div>
-    {% else %}
-    <div class="d-flex">
-      <a href="{% url 'login' %}" class="btn btn-outline-light me-2">Log In</a>
-      <a href="{% url 'signup' %}" class="btn btn-warning">Sign Up</a>
-    </div>
-    {% endif %}
-  </div>
-</nav>
+        <!-- Always-visible User Dropdown -->
+        {% if user.is_authenticated %}
+        <div class="dropdown">
+          <a
+            class="btn btn-outline-light dropdown-toggle"
+            href="#"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <i class="bi bi-person-circle me-1"></i> {{ user.username }}
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li>
+              <a class="dropdown-item" href="{% url 'password_change' %}"
+                >🔐 Change Password</a
+              >
+            </li>
+            <li><hr class="dropdown-divider" /></li>
+            <li>
+              <form method="post" action="{% url 'logout' %}">
+                {% csrf_token %}
+                <button type="submit" class="dropdown-item text-danger">
+                  🚪 Log Out
+                </button>
+              </form>
+            </li>
+          </ul>
+        </div>
+        {% else %}
+        <div class="d-flex">
+          <a href="{% url 'login' %}" class="btn btn-outline-light me-2"
+            >Log In</a
+          >
+          <a href="{% url 'signup' %}" class="btn btn-warning">Sign Up</a>
+        </div>
+        {% endif %}
+      </div>
+    </nav>
 
+    <div class="container mt-4">{% block content %} {% endblock content %}</div>
 
-  <div class="container mt-4">
-    {% block content %}
-    {% endblock content %}
-  </div>
-
-  <!-- Bootstrap 5 JS -->
-   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
-
-</body>
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
 </html>

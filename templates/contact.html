@@ -1,12 +1,56 @@
-{% load crispy_forms_tags %}
-{% extends 'base.html'}
-{% block title %}Contact Page{% endblock %}
+{% extends 'base.html' %} 
+{% load crispy_forms_tags %} 
+{% block title %}ContactPage{% endblock %} 
 {% block content %}
 
-    <h1>Contact At</h1>
-   <form method="post">
-    {% crispy_token %}
-    {{ form|crispy}}
-    <input class="btn btn-success" type="submit" value="Send">
-   </form>
+  <style>
+    body {
+      background-color: #f1f3f5;
+    }
+    .form-section {
+      background-color: white;
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    }
+    .heading {
+      font-weight: bold;
+    }
+  </style>
+
+
+  <div class="container py-5">
+    <h1 class="text-center mb-4 heading">Contact & Feedback</h1>
+    <p class="text-center mb-5">Have questions, feedback, or suggestions? We’d love to hear from you.</p>
+
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <div class="form-section">
+          <form method="POST" action="/contact/">
+            <!-- For Django: {% csrf_token %} -->
+
+            <div class="mb-3">
+              <label for="name" class="form-label">Your Name</label>
+              <input type="text" class="form-control" id="name" name="name" placeholder="Jane Doe" required>
+            </div>
+
+            <div class="mb-3">
+              <label for="email" class="form-label">Email Address</label>
+              <input type="email" class="form-control" id="email" name="email" placeholder="you@example.com" required>
+            </div>
+
+            <div class="mb-3">
+              <label for="message" class="form-label">Your Message</label>
+              <textarea class="form-control" id="message" name="message" rows="5" placeholder="Write your feedback or inquiry here..." required></textarea>
+            </div>
+
+            <div class="d-grid">
+              <button type="submit" class="btn btn-success btn-lg">Send Message</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
 {% endblock %}
+
