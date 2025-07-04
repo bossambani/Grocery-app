@@ -1,12 +1,11 @@
 from django.views import View
-from django.shortcuts import redirect, get_object_or_404
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import Product, Order, OrderItem, Customer
 from django.views.generic import ListView, TemplateView
 from django.contrib.auth.mixins import LoginRequiredMixin
 import random
 from django.http import Http404
 from django.http import JsonResponse
-
 
 
 class HomePageView(ListView):
